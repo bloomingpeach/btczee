@@ -31,3 +31,7 @@ pub fn decodeReader(r: anytype) !@This() {
 pub fn eql(self: *const @This(), other: *const @This()) bool {
     return self.type == other.type and std.mem.eql(u8, &self.hash, &other.hash);
 }
+
+pub fn hintSerializedLen() usize {
+    return 4 + 32;
+}
